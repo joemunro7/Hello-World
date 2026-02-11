@@ -1,0 +1,194 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f4f7fb;
+  color: #1c2530;
+}
+
+.app-header {
+  background: linear-gradient(120deg, #0f4c81, #1d6fa5);
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.app-header h1 {
+  margin: 0 0 0.4rem;
+}
+
+.auth-mock {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+
+.auth-mock button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 0.9rem;
+  background: #fff;
+  color: #0f4c81;
+  font-weight: 700;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 1.25rem auto;
+  padding: 0 1rem 2rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  flex: 1;
+  border: 1px solid #bfd6ea;
+  border-radius: 10px;
+  background: #e9f3fc;
+  color: #0f4c81;
+  padding: 0.65rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tab.is-active {
+  background: #0f4c81;
+  color: #fff;
+}
+
+.panel {
+  display: none;
+}
+
+.panel.is-active {
+  display: block;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid #d9e5f2;
+  margin-bottom: 1rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+input {
+  border: 1px solid #b7c9dd;
+  border-radius: 8px;
+  padding: 0.55rem;
+  font-size: 0.95rem;
+}
+
+button[type='submit'] {
+  border: none;
+  border-radius: 8px;
+  padding: 0.65rem 1rem;
+  background: #0f4c81;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.metric {
+  background: #fff;
+  border: 1px solid #d9e5f2;
+  border-radius: 12px;
+  padding: 0.8rem;
+}
+
+.metric h4 {
+  margin: 0 0 0.25rem;
+  color: #375a7a;
+}
+
+.metric p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  border-bottom: 1px solid #e3edf8;
+  padding: 0.55rem;
+}
+
+.status-pending {
+  color: #9a6d00;
+  font-weight: 700;
+}
+
+.status-approved {
+  color: #0a7f44;
+  font-weight: 700;
+}
+
+.status-rejected {
+  color: #a91d2f;
+  font-weight: 700;
+}
+
+.inline-form {
+  display: flex;
+  gap: 0.8rem;
+  align-items: end;
+}
+
+.inline-form label {
+  margin: 0;
+  flex: 1;
+}
+
+.secondary {
+  background: #0a7f44;
+}
+
+.ghost {
+  background: #a91d2f;
+}
+
+@media (max-width: 720px) {
+  .inline-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}

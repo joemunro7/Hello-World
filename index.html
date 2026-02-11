@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Nurse Hours Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Student Nurse Placement Hours</h1>
+      <p>A working demo for students, assessors, and lecturers.</p>
+      <div class="auth-mock">
+        <button type="button">Continue with Google</button>
+        <button type="button">Continue with Apple</button>
+        <span>Face ID compatible via Apple/passkeys on supported devices.</span>
+      </div>
+    </header>
+
+    <main class="container">
+      <nav class="tabs" aria-label="Role views">
+        <button class="tab is-active" data-tab="student">Student</button>
+        <button class="tab" data-tab="assessor">Placement Assessor</button>
+        <button class="tab" data-tab="lecturer">College Lecturer</button>
+      </nav>
+
+      <section id="student" class="panel is-active" aria-label="Student panel">
+        <h2>Student View</h2>
+        <p>Log placement hours against your matriculation number.</p>
+
+        <form id="student-form" class="card">
+          <label>
+            Matriculation Number
+            <input id="student-matric" required placeholder="e.g. S1234567" />
+          </label>
+          <label>
+            Date
+            <input id="student-date" type="date" required />
+          </label>
+          <label>
+            Hours Completed
+            <input id="student-hours" type="number" step="0.5" min="0.5" required />
+          </label>
+          <label>
+            Placement Site
+            <input id="student-site" placeholder="Ward / Hospital" required />
+          </label>
+          <button type="submit">Add Hours</button>
+        </form>
+
+        <div class="grid-3" id="student-summary"></div>
+
+        <div class="card">
+          <h3>Your Entries</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Hours</th>
+                <th>Site</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="student-logs"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="assessor" class="panel" aria-label="Assessor panel">
+        <h2>Placement Assessor View</h2>
+        <p>Find a student by matric number and sign off placement hours.</p>
+
+        <form id="assessor-search" class="card inline-form">
+          <label>
+            Student Matriculation Number
+            <input id="assessor-matric" required placeholder="e.g. S1234567" />
+          </label>
+          <button type="submit">Load Student Logs</button>
+        </form>
+
+        <div class="card">
+          <h3>Pending Entries</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Hours</th>
+                <th>Site</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="assessor-logs"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="lecturer" class="panel" aria-label="Lecturer panel">
+        <h2>College Lecturer View</h2>
+        <p>Read-only progress dashboard across students.</p>
+
+        <div class="card">
+          <table>
+            <thead>
+              <tr>
+                <th>Matric Number</th>
+                <th>Recorded Hours</th>
+                <th>Verified Hours</th>
+                <th>Hours Remaining (from 288)</th>
+              </tr>
+            </thead>
+            <tbody id="lecturer-summary"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
